@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Новый год</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
+    <script type="text/javascript">
+      function snowToggle() {
+        snowStorm.toggleSnow();
+      }
+    </script>
+
+    <script>
+      snowStorm.followMouse = false;
+      snowStorm.flakesMaxActive = 150;
+      snowStorm.snowStick = false;
+      snowStorm.excludeMobile = false;
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="bg animated fadeIn delay-1s">
+      <div class="middle">
+        <h1 id="text">ДО НОВОГО ГОДА ОСТАЛОСЬ</h1>
+        <hr>
+        <p id="timer"></p>
+        <button type="button" id="button" onclick="snowToggle()">Выключить снег</button>
+      </div>
+    </div>
+  </body>
+</html>
