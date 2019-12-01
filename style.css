@@ -1,0 +1,65 @@
+@import url('httpa://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.bg {
+  background: url(BG.jpg);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: 15px;
+  font-weight: 100;
+}
+
+#timer {
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: 'Comfortaa', sans-serif;
+  word-spacing: 20px;
+}
+
+hr {
+  margin: auto;
+  width: 80%;
+  border: 2px solid #fff;
+}
+
+#button {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#button:hover {
+  background-color: lightblue;
+  color: white;
+}
+
+#button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
