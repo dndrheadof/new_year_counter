@@ -11,7 +11,7 @@ const coolFunctionName = setInterval(() => {
   ];
 
   for (let pos in converted) {
-    converted[pos] += " " + declaration(converted[pos], titles[pos]) + "\n";
+    converted[pos] += " " + declaration(converted[pos], titles[pos]) + "<br>";
   }
   
   const [days, hours, minutes, seconds] = converted;
