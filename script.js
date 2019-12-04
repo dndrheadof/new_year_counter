@@ -1,33 +1,39 @@
-/*
-*
-*
-*
-* НЕ СМОТРЕТЬ НА КОД!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*
-*
-*
-*/
+const newYearDate = new Date("Jan 1, 2020 00:00:00");
+const coolFunctionName = setInterval(() => {
+  const now = Date.now();
+  const distance = newYearDate - now;
+  const converted = convert(distance);
+  const titles = [
+    ['день', 'дня', 'дней'],
+    ['час', 'часа', 'часов'],
+    ['минута', 'минуты', 'минут'],
+    ['секунда', 'секунды', 'секунд']
+  ];
 
-let dateTo = new Date("Jan 1, 2020 00:00:00").getTime();
-let cdFunction = setInterval(function() {
-let now = new Date().getTime();
-let dist = dateTo - now;
-
-let daysA = Math.floor(dist / (1000 * 60 * 60 * 24));
-let hoursA = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-let minutesA = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-let secondsA = Math.floor((dist % (1000 * 60)) / 1000);
-
-let days = daysA > 0 ? `${daysA}д.` : '';
-let hours = hoursA > 0 ? `${hoursA}ч.` : '';
-let minutes = minutesA > 0 ? `${minutesA}м.` : '';
-let seconds = secondsA > 0 ? `${secondsA}с.` : '';
-
-document.getElementById('timer').innerHTML = `${days} ${hours} ${minutes} ${seconds}`;
-
-if (dist < 0) {
+  for (let pos in converted) {
+    converted[pos] += " " + declaration(converted[pos], titles[pos]) + " ";
+  }
+  
+  const [days, hours, minutes, seconds] = converted;
+  document.getElementById("timer").innerHTML = days + hours + minutes + seconds;
+    
+  if (distance <= 0) {
     clearInterval(cdFunction);
     document.getElementById('timer').innerHTML = '';
     document.getElementById('text').innerHTML = 'С НОВЫМ ГОДОМ!';
   }
 }, 1000)
+
+const convert = (ms) => {
+  const days = (ms / (1000 * 60 * 60 * 24)).toFixed(0);
+  const hours = ((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toFixed(0);
+  const minutes = ((ms % (1000 * 60 * 60)) / (1000 * 60)).toFixed(0);
+  const seconds = ((ms % (1000 * 60)) / 1000).toFixed(0);
+
+  return [days, hours, minutes, seconds];
+}
+
+const declaration = (number, options) => {
+  const whatIsThat = [2, 0, 1, 1, 1, 2];
+  return options[(number % 100 > 4 && number % 100 < 20) ? 2 : whatIsThat[(number % 10 < 5) ? number % 10 : 5]];
+}
