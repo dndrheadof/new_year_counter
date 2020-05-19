@@ -18,7 +18,7 @@ const coolFunctionName = setInterval(() => {
   document.getElementById("timer").innerHTML = days + hours + minutes + seconds;
     
   if (distance <= 0) {
-    clearInterval(cdFunction);
+    clearInterval(coolFunctionName);
     document.getElementById('timer').innerHTML = '';
     document.getElementById('text').innerHTML = 'С НОВЫМ ГОДОМ!';
   }
