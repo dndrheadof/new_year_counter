@@ -1,4 +1,4 @@
-const newYearDate = new Date("Jan 1, 2022 00:00:00");
+const newYearDate = new Date(`Jan 1, ${new Date().getFullYear()} 00:00:00`);
 const coolFunctionName = setInterval(() => {
   const now = Date.now();
   const distance = newYearDate - now;
